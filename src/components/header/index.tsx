@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '../button';
+import { useContext } from 'react';
+import { LanguageContext } from '../../App';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,6 +12,8 @@ const StyledHeader = styled.header`
 `;
 
 export const Header = () => {
+  const languageContext = useContext(LanguageContext);
+  
   return (
     <StyledHeader>
       <Button text="Смена языка" />
