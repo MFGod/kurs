@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0px 20%;
 
-      background-color: #181818;
+      background-color: ${(props) => props.theme.primaryColor};
 
       *{
          box-sizing: border-box;

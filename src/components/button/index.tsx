@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 
-
 interface ButtonInterface {
   text: string;
+  onClick?: () => void;
 }
 
 const StyledButton = styled.button`
@@ -13,8 +13,16 @@ const StyledButton = styled.button`
   padding: 12px 24px;
 
   border: none;
+
+  background-color: ${(props) => props.theme.secondaryColor};
+
+  color: ${(props) => props.theme.buttonColor};
 `;
 
-export const Button: FC<ButtonInterface> = ({ text }) => {
-  return <StyledButton>{text}</StyledButton>;
+export const Button: FC<ButtonInterface> = ({ text, onClick }) => {
+  return (
+    <>
+      <StyledButton onClick={onClick}>{text}</StyledButton>
+    </>
+  );
 };
