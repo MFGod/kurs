@@ -1,9 +1,10 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC } from "react";
+import styled from "styled-components";
 
 interface ButtonInterface {
   text: string;
   onClick?: () => void;
+  className?: string;
 }
 
 const StyledButton = styled.button`
@@ -19,10 +20,12 @@ const StyledButton = styled.button`
   color: ${(props) => props.theme.buttonColor};
 `;
 
-export const Button: FC<ButtonInterface> = ({ text, onClick }) => {
+export const Button: FC<ButtonInterface> = ({ text, onClick, className }) => {
   return (
     <>
-      <StyledButton onClick={onClick}>{text}</StyledButton>
+      <StyledButton className={className} onClick={onClick}>
+        {text}
+      </StyledButton>
     </>
   );
 };

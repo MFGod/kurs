@@ -36,7 +36,7 @@ const EN: TranslationInterface = {
   closeSession: 'close session',
 };
 
-export const tranlation = (
+export const translation = (
   language: string,
   key: keyof TranslationInterface
 ) => {
